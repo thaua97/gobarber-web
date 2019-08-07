@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import logo from '~/assets/logo-header.svg';
 
+import Notifications from '../Notifications';
+
 import { Container, Content, Profile } from './styles';
 
 export default function Header() {
@@ -15,13 +17,14 @@ export default function Header() {
                 </nav>
 
                 <aside>
+                    <Notifications />
                     <Profile>
                         <div>
                             <strong>Thauã Borges</strong>
                             <Link to="/profile">Meu Perfil</Link>
                         </div>
                         <img
-                            src="https://api.adorable.io/avatars/285/barber@adorable.io.png"
+                            src="https://api.adorable.io/avatars/48/barber@adorable.io.png"
                             alt=""
                         />
                     </Profile>
