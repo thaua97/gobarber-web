@@ -52,6 +52,12 @@ export const NotificationsList = styled.div`
 export const Scroll = styled(PerfectScrollBar)`
     max-height: 260px;
     padding: 5px 15px;
+
+    p {
+        text-align: center;
+        width: 100%;
+        color: rgba(255, 255, 255, 0.3);
+    }
 `;
 
 export const Notification = styled.div`
@@ -68,8 +74,10 @@ export const Notification = styled.div`
     }
 
     time {
+        display: block;
         font-size: 12px;
         opacity: 0.6;
+        margin-bottom: 5px;
     }
 
     button {
@@ -77,9 +85,6 @@ export const Notification = styled.div`
         border: none;
         background: none;
         color: ${lighten(0.2, '#7159c1')};
-        padding: 0 5px;
-        margin: 0 5px;
-        border-left: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     ${props =>
