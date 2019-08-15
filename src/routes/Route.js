@@ -11,15 +11,15 @@ import { store } from '~/store';
 export default function RouteWrapper({ component: Component, isPrivate = false, ...rest }) {
     const { signed } = store.getState().auth;
 
-    if (!signed && isPrivate) {
+    if (signed === false && isPrivate) {
         return <Redirect to="/" />;
     }
 
-    if (signed && !isPrivate) {
+    if (signed && isPrivate === false) {
         return <Redirect to="/dashboard" />;
     }
 
-    const Layout = signed ? DefaultLayout : AuthLayout;
+    const Layout = signed === true ? DefaultLayout : AuthLayout;
 
     return (
         <Route
